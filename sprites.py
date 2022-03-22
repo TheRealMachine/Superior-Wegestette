@@ -3,7 +3,7 @@ from config import *
 import math
 import random
 
-class Spritesheet
+class Spritesheet:
         def __init__(self,file):
             self.sheet = pygame.image.load(file).convert()
             
@@ -25,9 +25,8 @@ class Player(pygame.sprite.Sprite):
 
         self.facing = 'down'
         
-        image_to_load = SuperiorWegestette.img.load("img/single.png")
+        image_to_load = pygame.image.load("img/single.png")
 
-        image_to_load = pygame.image.load("._hero-idle-front.png")
         self.image = pygame.Surface([self.width, self.height])
         self.image.set_colorkey*(BLACK)
         self.image.blit(image_to_load, (0, 0 ))
