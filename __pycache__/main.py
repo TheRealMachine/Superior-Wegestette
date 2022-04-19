@@ -10,30 +10,18 @@ class Game:
         self.screen = pygame.display.set_mode((win_width, win_height))
         self.clock = pygame.time.Clock()
         self.running = True
-        self.font = pygame.font.Font('BAUHS93.TTF', 70)
+        self.font = pygame.font.Font('BAUHS93.TTF', 32)
 
         self.character_spritesheet = Spritesheet('img/character.png')
         self.terrain_spritesheet = Spritesheet('img/terrain.png')
         self.enemy_spritesheet = Spritesheet('img/enemy.png')
         self.attack_spritesheet = Spritesheet('img/attack.png')
-        self.intro_background = pygame.image.load('./img/Backgrounds.png')
+        self.intro_background = pygame.image.load('./img/introbackground.png')
         self.go_background = pygame.image.load('./img/gameover.png')
         self.time_image = Spritesheet('img/time.png')
         self.water_image = Spritesheet('img/water.png')
         self.oak_image = Spritesheet('img/oak.png')
         self.spruce_image = Spritesheet('img/spruce.png')
-        self.lava_image = Spritesheet('img/lava.png')
-        self.grassdown_image = Spritesheet('img/grassdown.png')
-        self.stonedown_image = Spritesheet('img/stonedown.png')
-        self.stone_image = Spritesheet('img/stone.png')
-        self.haydown_image = Spritesheet('img/terrain.png')
-        self.hay_image = Spritesheet('img/terrain.png')
-        self.bcrystal_image = Spritesheet('img/crystalblue.png')
-        self.ycrystal_image = Spritesheet('img/crystalyellow.png')
-        self.scrystal_image = Spritesheet('img/crystalsilver.png')
-        self.forestgrassdown_image = Spritesheet('img/forestgrassdown.png')
-        self.sakura_image = Spritesheet('img/sakura.png')
-        self.forestgrass_image = Spritesheet('img/terrain.png')
         
 
 
@@ -55,30 +43,6 @@ class Game:
                     Oak(self,j,i)
                 if column == "S":
                     Spruce(self,j,i)
-                if column == "L":
-                    Lava(self,j,i)
-                if column == "Z":
-                    Grassdown(self,j,i)
-                if column == "Y":
-                    Stonedown(self,j,i)
-                if column == "U":
-                    Stone(self,j,i)
-                if column == "I":
-                    Haydown(self,j,i)
-                if column == "H":
-                    Hay(self,j,i)
-                if column == "C":
-                    Crystalblue(self,j,i)
-                if column == "D":
-                    Crystalsilver(self,j,i)
-                if column == "F":
-                    Crystalyellow(self,j,i)
-                if column == "G":
-                    Forestground(self,j,i)
-                if column == "J":
-                     Forestgrounddown(self,j,i)
-                if column == "K":
-                     Sakuratree(self,j,i)
                 
                     
 
@@ -162,10 +126,10 @@ class Game:
     def intro_screen(self):
         intro = True
 
-        title = self.font.render('The Grand Adventure', True, BLACK)
-        title_rect = title.get_rect(x=240, y=90)
+        title = self.font.render('Cool Game', True, BLACK)
+        title_rect = title.get_rect(x=10, y=10)
 
-        play_button = Button(500, 200, 100, 50, WHITE, BLACK, 'Play', 32)
+        play_button = Button(10, 50, 100, 50, WHITE, BLACK, 'Play', 32)
 
         while intro:
             for event in pygame.event.get():
