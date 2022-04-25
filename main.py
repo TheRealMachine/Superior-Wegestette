@@ -3,6 +3,9 @@ import pygame
 from sprites import *
 from config import *
 import sys
+import tkinter as tk
+
+
 
 class Game:
     def __init__(self):
@@ -11,6 +14,9 @@ class Game:
         self.clock = pygame.time.Clock()
         self.running = True
         self.font = pygame.font.Font('BAUHS93.TTF', 70)
+
+    
+        
 
         self.character_spritesheet = Spritesheet('img/character.png')
         self.terrain_spritesheet = Spritesheet('img/terrain.png')
@@ -28,14 +34,18 @@ class Game:
         self.stone_image = Spritesheet('img/stone.png')
         self.haydown_image = Spritesheet('img/terrain.png')
         self.hay_image = Spritesheet('img/terrain.png')
-        self.bcrystal_image = Spritesheet('img/crystalblue.png')
-        self.ycrystal_image = Spritesheet('img/crystalyellow.png')
-        self.scrystal_image = Spritesheet('img/crystalsilver.png')
         self.forestgrassdown_image = Spritesheet('img/forestgrassdown.png')
         self.sakura_image = Spritesheet('img/sakura.png')
         self.forestgrass_image = Spritesheet('img/terrain.png')
-        
+        self.bridge1_image = Spritesheet('img/Bridge1.png')
+        self.bridge2_image = Spritesheet('img/Bridge2.png')
+        self.bridge3_image = Spritesheet('img/Bridge3.png')
+        self.bridge4_image = Spritesheet('img/Bridge4.png')
+        self.bridge5_image = Spritesheet('img/Bridge5.png')
+        self.potion_image = Spritesheet('img/potion.png')
+        self.house_spritesheet = Spritesheet('img/house.png')
 
+        
 
     def create_tilemap(self):
         for i, row in enumerate(tilemap):
@@ -67,19 +77,44 @@ class Game:
                     Haydown(self,j,i)
                 if column == "H":
                     Hay(self,j,i)
-                if column == "C":
-                    Crystalblue(self,j,i)
-                if column == "D":
-                    Crystalsilver(self,j,i)
-                if column == "F":
-                    Crystalyellow(self,j,i)
                 if column == "G":
                     Forestground(self,j,i)
                 if column == "J":
                      Forestgrounddown(self,j,i)
                 if column == "K":
                      Sakuratree(self,j,i)
-                
+                if column == "A":
+                     Bridge1(self,j,i)
+                if column == "M":
+                     Bridge2(self,j,i)
+                if column == "N":
+                     Bridge3(self,j,i)
+                if column == "Q":
+                     Bridge4(self,j,i)
+                if column == "R":
+                     Bridge5(self,j,i)
+                if column == "C":
+                     Water2(self,j,i)
+                if column == "D":
+                    Potion(self,j,i)
+                if column == "F":
+                    House1(self,j,i)    
+                if column == "V":
+                    House2(self,j,i)    
+                if column == "X":
+                    House3(self,j,i)    
+                if column == "à":
+                    House4(self,j,i)    
+                if column == "ä":
+                    House5(self,j,i)
+                if column == "é":
+                    House6(self,j,i)
+                if column == "ö":
+                    House7(self,j,i)
+                if column == "ü":
+                    House8(self,j,i)
+                if column == "è":
+                    House9(self,j,i)
                     
 
 
@@ -100,6 +135,7 @@ class Game:
             if event.type == pygame.QUIT:
                 self.playing = False
                 self.running = False
+            
             
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
@@ -151,12 +187,16 @@ class Game:
             if restart_button.is_pressed(mouse_pos,mouse_pressed):
                 self.new()
                 self.main()
+                
 
             self.screen.blit(self.go_background, (0,0))
             self.screen.blit(text, text_rect)
             self.screen.blit(restart_button.image, restart_button.rect)
             self.clock.tick(fps)
             pygame.display.update()
+    
+
+    
 
 
     def intro_screen(self):
@@ -184,6 +224,11 @@ class Game:
             self.screen.blit(play_button.image, play_button.rect)
             self.clock.tick(fps)
             pygame.display.update()
+    
+
+
+
+
 
 
 g = Game()

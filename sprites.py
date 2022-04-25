@@ -13,7 +13,6 @@ class Spritesheet:
         sprite.set_colorkey(BLACK)
         return sprite
 
-
 class Player(pygame.sprite.Sprite):
     def __init__(self,game,x,y):
 
@@ -45,6 +44,7 @@ class Player(pygame.sprite.Sprite):
         self.movement()
         self.animate()
         self.collide_enemy()
+        
 
         self.rect.x += self.x_change
         self.collide_blocks('x')
@@ -83,7 +83,8 @@ class Player(pygame.sprite.Sprite):
         if hits:
             self.kill()
             self.game.playing = False
-
+    
+    
     def collide_blocks(self, direction):
         if direction == "x":
             hits = pygame.sprite.spritecollide(self, self.game.blocks, False)
@@ -276,8 +277,6 @@ class Enemy(pygame.sprite.Sprite):
                 if self.animation_loop >= 3:
                     self.animation_loop = 1
 
-
-
 class Block(pygame.sprite.Sprite):
     def __init__(self, game, x, y):
 
@@ -296,10 +295,6 @@ class Block(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = self.x
         self.rect.y = self.y 
-
-
-
-
 
 class Ground(pygame.sprite.Sprite):
     def __init__(self,game,x,y):
@@ -620,63 +615,6 @@ class Hay(pygame.sprite.Sprite):
         self.rect.x = self.x
         self.rect.y = self.y 
 
-class Crystalblue(pygame.sprite.Sprite):
-    def __init__(self, game, x, y):
-
-        self.game = game
-        self._layer = block_layer
-        self.groups = self.game.all_sprites,
-        pygame.sprite.Sprite.__init__(self,self.groups)
-
-        self.x = x*tilesize
-        self.y = y*tilesize
-        self.width = tilesize
-        self.height = tilesize
-
-        self.image = self.game.bcrystal_image.get_sprite(0,0,self.width,self.height)
-
-        self.rect = self.image.get_rect()
-        self.rect.x = self.x
-        self.rect.y = self.y 
-
-class Crystalsilver(pygame.sprite.Sprite):
-    def __init__(self, game, x, y):
-
-        self.game = game
-        self._layer = block_layer
-        self.groups = self.game.all_sprites,
-        pygame.sprite.Sprite.__init__(self,self.groups)
-
-        self.x = x*tilesize
-        self.y = y*tilesize
-        self.width = tilesize
-        self.height = tilesize
-
-        self.image = self.game.scrystal_image.get_sprite(0,0,self.width,self.height)
-
-        self.rect = self.image.get_rect()
-        self.rect.x = self.x
-        self.rect.y = self.y 
-
-class Crystalyellow(pygame.sprite.Sprite):
-    def __init__(self, game, x, y):
-
-        self.game = game
-        self._layer = block_layer
-        self.groups = self.game.all_sprites,
-        pygame.sprite.Sprite.__init__(self,self.groups)
-
-        self.x = x*tilesize
-        self.y = y*tilesize
-        self.width = tilesize
-        self.height = tilesize
-
-        self.image = self.game.ycrystal_image.get_sprite(0,0,self.width,self.height)
-
-        self.rect = self.image.get_rect()
-        self.rect.x = self.x
-        self.rect.y = self.y 
-
 class Forestground(pygame.sprite.Sprite):
     def __init__(self, game, x, y):
 
@@ -734,3 +672,311 @@ class Sakuratree(pygame.sprite.Sprite):
         self.rect.x = self.x
         self.rect.y = self.y 
 
+class Bridge1(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.bridge1_image.get_sprite(0,0,self.width,self.height)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
+
+class Bridge2(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.bridge2_image.get_sprite(0,0,self.width,self.height)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
+
+class Bridge3(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.bridge3_image.get_sprite(0,0,self.width,self.height)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
+
+class Bridge4(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.bridge4_image.get_sprite(0,0,self.width,self.height)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
+
+class Bridge5(pygame.sprite.Sprite):
+
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.bridge5_image.get_sprite(0,0,self.width,self.height)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
+
+class Water2(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites, 
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.water_image.get_sprite(0,0,self.width,self.height)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
+
+class Potion(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites, self.game.enemies
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.potion_image.get_sprite(0,0,self.width,self.height)
+        self.image.set_colorkey(WHITE)
+        
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
+
+
+
+class House1(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites, self.game.blocks
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.house_spritesheet.get_sprite(525,123,self.width,self.height)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
+
+class House2(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites, self.game.blocks
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.house_spritesheet.get_sprite(557,123,self.width,self.height)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
+
+class House3(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites, self.game.blocks
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.house_spritesheet.get_sprite(589,123,self.width,self.height)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
+
+class House4(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites, self.game.blocks
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.house_spritesheet.get_sprite(525,91,self.width,self.height)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
+
+class House5(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites, self.game.blocks
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.house_spritesheet.get_sprite(557,91,self.width,self.height)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
+
+class House6(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites, self.game.blocks
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.house_spritesheet.get_sprite(589,91,self.width,self.height)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
+
+class House7(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites, self.game.blocks
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.house_spritesheet.get_sprite(525,59,self.width,self.height)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
+
+class House8(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites, self.game.blocks
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.house_spritesheet.get_sprite(557,59,self.width,self.height)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
+
+class House9(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+
+        self.game = game
+        self._layer = ground_layer
+        self.groups = self.game.all_sprites, self.game.blocks
+        pygame.sprite.Sprite.__init__(self,self.groups)
+
+        self.x = x*tilesize
+        self.y = y*tilesize
+        self.width = tilesize
+        self.height = tilesize
+
+        self.image = self.game.house_spritesheet.get_sprite(589,59,self.width,self.height)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y 
