@@ -75,7 +75,7 @@ class Game:
                     Stone(self,j,i)
                 if column == "I":
                     Haydown(self,j,i)
-                if column == "H":
+                if column == "H":    
                     Hay(self,j,i)
                 if column == "G":
                     Forestground(self,j,i)
@@ -138,7 +138,7 @@ class Game:
             
             
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE:
+                if event.key == pygame.K_SPACE: 
                     
                     if self.player.facing == 'up':
                         Attack(self, self.player.rect.x, self.player.rect.y - tilesize)

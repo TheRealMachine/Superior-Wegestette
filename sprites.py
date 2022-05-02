@@ -808,8 +808,6 @@ class Potion(pygame.sprite.Sprite):
         self.rect.x = self.x
         self.rect.y = self.y 
 
-
-
 class House1(pygame.sprite.Sprite):
     def __init__(self, game, x, y):
 

@@ -8,6 +8,7 @@ player_layer = 4
 block_layer = 2
 ground_layer = 1
 enemy_layer = 3
+house_layer = 5
 
 
 player_speed = 15
